@@ -6,7 +6,7 @@ import Leaderboard from './components/Leaderboard'
 import Rewards from './components/Rewards'
 import Activity from './components/Activity'
 import Rules from './components/Rules'
-import AboutUS from './components/AboutUs'
+import AboutUs from './components/AboutUs'
 import Footer from './components/Footer'
 
 function App() {
@@ -15,13 +15,15 @@ function App() {
   return (
     <>
       <Header/>
-      <Home/>
-      <Details/>
-      <Leaderboard/>
-      <Activity/>
-      <Rewards/>
-      <Rules/>
-      <AboutUS/>
+      <div className="pt-20">
+        <Home/>
+        <Details/>
+        <Leaderboard/>
+        <Activity/>
+        <Rewards/>
+        <Rules/>
+        <AboutUs/>
+      </div>
       <Footer/>
     </>
   )
