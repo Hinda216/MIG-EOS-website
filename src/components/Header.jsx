@@ -1,19 +1,52 @@
+import { useState } from "react";
+
 export default function Header() {
+    const [active, setActive] = useState("home");
+
+    const navItems = [
+        {id: "home", label:"Home"},
+        {id: "details", label:"Deyails"},
+        {id: "leaderboard", label:"Leaderboard"},
+        {id: "activity", label:"Activity"},
+        {id: "rewards", label:"Rewards"},
+        {id: "rules", label:"Rules"},
+        {id: "aboutUs", label:"AboutUs"},
+    ];
     return (
-        <header className="fixed top-0 w-full bg-white shadow-md z-50">
-            <div className="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
-                <div className="text-xl font-bold text-green-700">
-                    WATTS PLAY
+        <header className="fixed top-0 w-full bg-[#60A478] shadow-md z-50 text-white">
+            <div className="max-w-6xl mx-auto px-6 py-3 flex justify-between items-center">
+                {/* EOS LOGO*/}
+                <div className="flex items-center gap-2">
+                    <img
+                        src="../image/eoslogo.jpg"
+                        alt="EOS Logo"
+                        className="h-12 w-12 object-contain"
+                    />
                 </div>
-                <nav className="flex space-x-4">
-                    <a href="#home" className="text-gray-700 hover:text-green-600">Home</a>
-                    <a href="#details" className="text-gray-700 hover:text-green-600">Details</a>
-                    <a href="#leaderboard" className="text-gray-700 hover:text-green-600">Leaderboard</a>
-                    <a href="#activity" className="text-gray-700 hover:text-green-600">Activity</a>
-                    <a href="#rewards" className="text-gray-700 hover:text-green-600">Rewards</a>
-                    <a href="#rules" className="text-gray-700 hover:text-green-600">Rules</a>
-                    <a href="#aboutUs" className="text-gray-700 hover:text-green-600">About Us</a>
+
+                {/*nav part*/}
+                <nav className="flex gap-6 text-sm font-medium">
+                    {navItems.map((item) =>(
+                        <a key={item.id} href={`#${item.id}`}
+                        onClick={() => setActive(item.id)}
+                        className={`px-4 py-1.5 rounded-full border transition
+                            ${
+                            active === item.id
+                                ? "bg-white text-[#60A478] border-white"
+                                : "bg-[#60A478] text-white border-[#60A478] hover:bg-white hover:text-[#60A478]"
+                            }`}
+                        >
+                          {item.label}  
+                        </a>
+                    ))}
                 </nav>
+
+                {/* right: button chat with us*/}
+                <div>
+                    <button className="bg-white text-[#60A478] px-4 py-2 text-sm rounded-full hover:bg-gray-100 transition">
+                        Chat with us
+                    </button>
+                </div>
             </div>
         </header>
     )
