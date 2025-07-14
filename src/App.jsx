@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Header from './components/Header'
 import Home from './components/Home'
-import Details from './components/Details'
+import Features from './components/Features'
 import Leaderboard from './components/Leaderboard'
 import Rewards from './components/Rewards'
 import Activity from './components/Activity'
@@ -17,7 +17,7 @@ function App() {
       <Header/>
       <div className="pt-20">
         <Home/>
-        <Details/>
+        <Features/>
         <Leaderboard/>
         <Activity/>
         <Rewards/>

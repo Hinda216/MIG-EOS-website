@@ -5,7 +5,7 @@ export default function Header() {
 
     const navItems = [
         {id: "home", label:"Home"},
-        {id: "details", label:"Deyails"},
+        {id: "feature", label:"Features"},
         {id: "leaderboard", label:"Leaderboard"},
         {id: "activity", label:"Activity"},
         {id: "rewards", label:"Rewards"},

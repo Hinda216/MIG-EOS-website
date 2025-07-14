@@ -26,13 +26,11 @@ export default function Leaderboard() {
     ], 
   };
 
-  const topUser= data[tab].find((user) => user.rank === "1st");
-
   return (
     <section id="leaderboard" className="px-6 py-12 bg-gray-100 scroll-mt-20">
       {/* title and change button*/}
       <div className="text-center gap-4 mb-6">
-        <h2 className="text-2xl font-bold text-green-700 mb-2">🌟 Leaderboard</h2>
+        <h2 className="text-3xl font-bold text-green-700 mb-2">🌟 Leaderboard</h2>
         <div className="flex justify-center gap-4">
           <button className={`px-4 py-1 rounded-full text-sm font-medium ${
               tab === "weekly"
@@ -51,11 +49,23 @@ export default function Leaderboard() {
           >
             Monthly
           </button>
-        </div>      
+        </div>
+        <div className="text-left max-w-3xl mx-auto mb-8 space-y-3 text-gray-700">
+            <p className="font-bold text-green-700">
+              🎉 Congratulations to Our Energy Champions!
+            </p> 
+            <p>
+              A huge shoutout to this week/month's top energy savers - the people turning small, smart actions into real impact for their homes, their communities, and the planet.
+            </p>
+            <p>
+              Thanks to their efforts, they've not only saved energy but earned their spot at the top of our leaderboard!
+            </p>
+        </div>
+        
       </div>
 
       {/* display card*/}
-      <div className="grid grid-cols-5 gap-4 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-10">
         {data[tab].map((user, index) => (
           <div key={index}
           className={`flex flex-col items-center bg-white rounded-2xl p-4 ${
@@ -77,22 +87,25 @@ export default function Leaderboard() {
       </div>
 
       {/* user detials saving*/}
-      <div className="flex items-center justify-between bg-white p-4 rounded-xl shadow max-w-3xl mx-auto">
-        <div className="flex items-center gap-4">
-          <img src={topUser.img} 
-               alt={topUser.name} 
-               className="w-12 h-12 rounded-full object-cover"
-          />
-          <div>
-            <p className="font-bold text-green-700">{topUser.name}</p>
-            <p className="text-sm text-gray-500">{topUser.location}</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        {data[tab].map((user, index) => (
+          <div key={index} className="flex items-center justify-between bg-white p-4 rounded-xl shadow">
+            <div className="flex items-center gap-4">
+              <img src={user.img} alt={user.name} className="w-12 h-12 rounded-full object-cover" />
+              <div>
+                <p className="font-bold text-green-700">
+                  {user.icon} {user.name}
+                </p>
+                <p className="text-sm text-gray-500">{user.location}</p>
+              </div>
+            </div>
+            <div className="text-right">
+              <p className="text-sm text-gray-600 font-bold">SAVE</p>
+              <p className="text-xl text-green-700 font-bold">{user.save} kWh</p>
+            </div>
           </div>
-        </div>
-        <div className="text-right">
-          <p className="text-sm text-gray-600 font-bold">SAVE</p>
-          <p className="text-xl text-green-700 font-bold">{topUser.save} kWh</p>
-        </div>
-      </div>
+        ))}
+      </div>  
     </section>
   );
 }
