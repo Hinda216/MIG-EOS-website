@@ -1,4 +1,5 @@
 import { useState } from "react";
+import eoslogo from "../image/eoslogo.jpg";
 
 export default function Header() {
     const [active, setActive] = useState("home");
@@ -18,7 +19,7 @@ export default function Header() {
                 {/* EOS LOGO*/}
                 <div className="flex items-center gap-2">
                     <img
-                        src="../image/eoslogo.jpg"
+                        src={eoslogo}
                         alt="EOS Logo"
                         className="h-12 w-12 object-contain"
                     />

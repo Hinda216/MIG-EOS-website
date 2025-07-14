@@ -50,6 +50,7 @@ export default function Leaderboard() {
             Monthly
           </button>
         </div>
+        <div className="mt-6" />
         <div className="text-left max-w-3xl mx-auto mb-8 space-y-3 text-gray-700">
             <p className="font-bold text-green-700">
               🎉 Congratulations to Our Energy Champions!
