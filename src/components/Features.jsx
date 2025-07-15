@@ -1,5 +1,5 @@
 import React from "react";
-import feature from '../image/feature.jpg';
+import feature from '../image/feature.JPG';
 export default function Features() {
   return (
     <section id="feature" className="w-full py-16 bg-white scroll-mt-20">
