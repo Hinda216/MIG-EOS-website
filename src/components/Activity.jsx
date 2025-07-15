@@ -10,8 +10,8 @@ export default function Activity() {
     <section id="activity" className="w-full py-16 bg-white scroll-mt-20">
       <div className="max-w-6xl mx-auto px-6">
         {/*title*/}
-        <div className="flex items-center gap-2 text-green-700 mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold">Current Activities</h2>
+        <div className="flex justify-center text-green-700 mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-center">🔥 Current Activities</h2>
         </div>
 
         {/* activity card */}

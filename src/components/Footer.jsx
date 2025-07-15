@@ -6,11 +6,11 @@ import Instagram from "../image/ins.png";
 export default function Footer() {
   return (
     <footer className="bg-[#f5f5f5] text-gray-700 py-10">
-      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
 
         {/* contact info */}
         <div>
-          <h4>📮 Contact Us</h4>
+          <h4 className="font-semibold text-lg mb-2">📮 Contact Us</h4>
           <p>123 Solar Street</p>
           <p>Melbourne, VIC 3000</p>
           <p>Phone: +61 123 456 789</p>
@@ -27,7 +27,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="text-center text-sm text-gray-500 mt-10">
+        <div className="text-sm text-gray-500 text-center md:text-right self-center">
           © 2025 WATTS Play. All rights reserved.
         </div>
       </div>
